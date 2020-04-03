@@ -10,5 +10,5 @@
 # Ignore all local history of files
 .history
 
-bin/
-obj/Debug/netcoreapp3.0
+bin/*
+obj/Debug/netcoreapp3.0/*
