@@ -54,10 +54,10 @@ namespace PO{
         [Fact]
         public void treeTest(){
             Person person = new Person("Vlad", "Grokhotov",  new DateTime(1900, 1, 1), Gender.male );
-            Person secondPerson = new Person("Genadii", "Grokhotov",  new DateTime(1900, 1, 1), Gender.male );
+            Person secondPerson = new Person("Genadi", "Grokhotov",  new DateTime(1900, 1, 1), Gender.male );
             secondPerson.AddChild(person);
             Tree tree = new Tree(person, "Grokhotov");
-            Assert.Equal(tree.ToString(), "Grokhotov tree:\nfather: Genadii Grokhotov, birthday: 01.01.1900 \nfather: Vlad Grokhotov, birthday: 01.01.1900 \n");
+            Assert.Equal(tree.ToString(), "Grokhotov tree:\nfather: Genadi Grokhotov, birthday: 01.01.1900 \nfather: Vlad Grokhotov, birthday: 01.01.1900 \n");
         }
 
     }
