@@ -17,7 +17,7 @@ namespace PO{
             System.Console.WriteLine("Welcome to Family Tree Maker app!\nTo continue chose one of the following commands:");
             while (flag){
                 
-                System.Console.WriteLine("[1] Enter person\n[2] Show all entering persons\n[3] Add relationships\n[4] Show the Tree\n[5] Quit\n");
+                System.Console.WriteLine("[1] Enter person\n[2] Show all entering persons\n[3] Add relationships\n[4] Show the Tree\n[5] Write tree to file\n[6] Quit\n");
                 string command = System.Console.ReadLine();
                 switch (command){
                     case "1":
@@ -130,6 +130,43 @@ namespace PO{
                         System.Console.Clear();
                         break;
                     case "5":
+                        System.Console.WriteLine("Writing family tree to file.\nEnter tree name:");
+                        string treeName2 = System.Console.ReadLine();
+
+                        System.Console.WriteLine("\nAll persons:");
+                        int k = 1;
+                        foreach (var person in this.persons)
+                        {
+                            System.Console.WriteLine($"[{k}] " + person);
+                            k++;
+                        }
+
+                        System.Console.WriteLine("Please, enter the index of root person (last child):");
+                        int rootIndex2;
+                        while (true){
+                            var stringParentIndex = Console.ReadLine();
+                            if (!int.TryParse(stringParentIndex, out int index))
+                                Console.WriteLine("Incorrect input, try again");
+                            else
+                            {
+                                if (index < 1 || index > persons.Count)
+                                    Console.WriteLine("Incorrect input, try again");
+                                else
+                                {
+                                    rootIndex2 = index;
+                                    break;
+                                }
+                            }
+                        }
+
+                        this.tree = new Tree(this.persons[rootIndex2-1], treeName2);
+                        Writer.write(this.tree);
+                        
+                        System.Console.WriteLine("Press enter to continue..");
+                        System.Console.ReadLine();
+                        System.Console.Clear();
+                        break;
+                    case "6":
                         System.Console.WriteLine("You are leaving:((\nGoodbye!");
                         flag = false;
                         break;
