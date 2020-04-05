@@ -73,6 +73,10 @@ namespace PO{
         override public string ToString(){
             return (name + " " + surname + ", birthday: " + birthday.ToString("dd.MM.yyyy"));
         }
+
+        public Gender GetGender(){
+            return this.gender;
+        }
     }
 }
 

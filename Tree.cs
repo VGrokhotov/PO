@@ -32,7 +32,14 @@ namespace PO{
                     currentLevel = currentPerson.level;
                     result.Add("");
                 }
-                result[result.Count - 1] += currentPerson + " ";
+                
+                if (currentPerson.GetGender() == Gender.male){
+                    result[result.Count - 1] += "father: " + currentPerson + " ";
+                }
+                else {
+                    result[result.Count - 1] += "mother: " + currentPerson + " ";
+                }
+
                 foreach (var parent in currentPerson.GetParents)
                 {
                     queue.Enqueue(parent);
