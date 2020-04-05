@@ -3,42 +3,18 @@ using System.Collections.Generic;
 
 namespace PO{
 
-    /// <summary>
-    /// Family Tree Class
-    /// </summary>
     public class Tree{
 
-
-        /// <summary>
-        /// Name of Tree
-        /// </summary>
         private string treeName; 
 
-        /// <summary>
-        /// Getter of all Persons list
-        /// </summary>
-        /// <value>
-        /// List of Persons of family tree
-        /// </value>
         public Person root { get; }
 
-        /// <summary>
-        /// Tree class constructor
-        /// </summary>
-        /// <param name="root"> Last child of Tree</param>
-        /// <param name="treeName">Name of Tree</param>
         public Tree(Person root, string treeName){
             this.root = root;
             this.treeName = treeName;
             this.SetLevels();
         }
 
-        /// <summary>
-        /// Tree string representation
-        /// </summary>
-        /// <returns>
-        /// Returns the entire family Tree as a string, arranging Person on an equal footing
-        /// </returns>
         override public string ToString(){
 
             List<string> result = new List<string>();
@@ -71,10 +47,6 @@ namespace PO{
             }
             return resultString;
         }
-
-        /// <summary>
-        /// Sets affinity levels in a tree, invoking a SetLevel function of the root
-        /// </summary>
         
         public void SetLevels(){
             this.root.SetLevel(0);
