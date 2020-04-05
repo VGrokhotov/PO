@@ -31,3 +31,6 @@ After entering tree name you will see the person list and enter the index of roo
 
 ### Write tree to `txt` file
 Same logic as `Show the Tree` but will create `tree.txt` file in project derectory.
+
+### Quit
+You will leave CLI
