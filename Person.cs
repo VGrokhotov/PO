@@ -16,6 +16,8 @@ namespace PO{
 
         private Person mother;
 
+        private List<Person> brothersAndSisters = new List<Person>();
+
         private List<Person> children = new List<Person>();
 
         public int level { get; set; }
@@ -27,6 +29,10 @@ namespace PO{
             this.gender = gender;
         }
 
+        public void AddBrotherOrSister(Person person){
+            this.brothersAndSisters.Add(person);
+        }
+
         public void AddChild(Person child){
             if (this.gender == Gender.male){
                 child.father = this;
@@ -35,6 +41,11 @@ namespace PO{
             }
             
             this.children.Add(child);
+            foreach (var oldChild in this.children)
+            {
+                oldChild.AddBrotherOrSister(child);
+                child.AddBrotherOrSister(oldChild);
+            }
         }
 
         public void AddChild(List<Person> children){
