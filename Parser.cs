@@ -4,36 +4,14 @@ using System.Linq;
 
 
 namespace PO{
-    /// <summary>
-    /// Class for forming a family Tree
-    /// </summary>
     public class Parser{
-        
-        /// <summary>
-        /// List of all created Person
-        /// </summary>
-        /// <typeparam name="Person"> Person name</typeparam>
-        /// <returns>
-        /// List of all created Person
-        /// </returns>
+
         private List<Person> persons = new List<Person>();
 
-        /// <summary>
-        /// Instance of a family Tree
-        /// </summary>
         private Tree tree;
 
-        /// <summary>
-        /// Parser constructor
-        /// </summary>
         public Parser(){}
 
-        /// <summary>
-        /// Function that starts communication with the user through the console
-        /// </summary>
-        /// <remarks>
-        /// You can create a Person from String, look through all entering Persons, add relationships between Persons and look through the family tree
-        /// </remarks>
         public void StartParsing(){
             bool flag = true;
             System.Console.WriteLine("Welcome to Family Tree Maker app!\nTo continue chose one of the following commands:");
@@ -166,13 +144,6 @@ namespace PO{
             }
         }
 
-        /// <summary>
-        /// Function to get an instance of a Person from a string
-        /// </summary>
-        /// <param name="parsingString"> String to parse the Person</param>
-        /// <returns>
-        /// Instance of a Person
-        /// </returns>
         public Person Parse(string parsingString){
             string[] personSpecifications = parsingString.Split(" ");
             string name = personSpecifications[0];
