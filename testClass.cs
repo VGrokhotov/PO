@@ -57,7 +57,7 @@ namespace PO{
             Person secondPerson = new Person("Genadii", "Grokhotov",  new DateTime(1900, 1, 1), Gender.male );
             secondPerson.AddChild(person);
             Tree tree = new Tree(person, "Grokhotov");
-            Assert.Equal(tree.ToString(), "Grokhotov tree:\nGenadii Grokhotov, birthday: 01.01.1900 \nVlad Grokhotov, birthday: 01.01.1900 \n");
+            Assert.Equal(tree.ToString(), "Grokhotov tree:\nfather: Genadii Grokhotov, birthday: 01.01.1900 \nfather: Vlad Grokhotov, birthday: 01.01.1900 \n");
         }
 
     }
